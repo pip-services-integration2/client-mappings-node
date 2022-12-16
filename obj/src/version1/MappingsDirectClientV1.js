@@ -21,14 +21,13 @@ class MappingsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'mappings.get_collections_names');
             try {
-                return yield this._controller.getCollectionNames(correlationId);
+                let res = yield this._controller.getCollectionNames(correlationId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -36,14 +35,13 @@ class MappingsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'mappings.get_mappings');
             try {
-                return yield this._controller.getMappings(correlationId, filter, paging);
+                let res = yield this._controller.getMappings(correlationId, filter, paging);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -51,14 +49,13 @@ class MappingsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'mappings.add_mapping');
             try {
-                return yield this._controller.addMapping(correlationId, collection, internalId, externalId, timeToLive);
+                let res = yield this._controller.addMapping(correlationId, collection, internalId, externalId, timeToLive);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -66,14 +63,13 @@ class MappingsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'mappings.map_to_external');
             try {
-                return yield this._controller.mapToExternal(correlationId, collection, internalId);
+                let res = yield this._controller.mapToExternal(correlationId, collection, internalId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -81,14 +77,13 @@ class MappingsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'mappings.map_to_internal');
             try {
-                return yield this._controller.mapToInternal(correlationId, collection, externalId);
+                let res = yield this._controller.mapToInternal(correlationId, collection, externalId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -96,14 +91,13 @@ class MappingsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'mappings.delete_mapping');
             try {
-                return yield this._controller.deleteMapping(correlationId, collection, internalId, externalId);
+                let res = yield this._controller.deleteMapping(correlationId, collection, internalId, externalId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }

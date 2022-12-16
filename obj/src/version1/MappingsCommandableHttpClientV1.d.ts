@@ -2,7 +2,7 @@ import { IMappingsClient } from "./IMappingsClient";
 import { DataPage, FilterParams, PagingParams } from "pip-services3-commons-nodex";
 import { CommandableHttpClient } from 'pip-services3-rpc-nodex';
 import { MappingV1 } from "service-mappings-node";
-export declare class MappingsHttpClientV1 extends CommandableHttpClient implements IMappingsClient {
+export declare class MappingsCommandableHttpClientV1 extends CommandableHttpClient implements IMappingsClient {
     constructor();
     getCollectionNames(correlationId: string): Promise<string[]>;
     getMappings(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MappingV1>>;

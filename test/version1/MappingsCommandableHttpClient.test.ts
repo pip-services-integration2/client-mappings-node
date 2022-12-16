@@ -4,16 +4,16 @@ import { References } from 'pip-services3-commons-nodex';
 
 import { MappingsMemoryPersistence } from 'service-mappings-node';
 import { MappingsController } from 'service-mappings-node';
-import { MappingsHttpServiceV1 } from 'service-mappings-node';
+import { MappingsCommandableHttpServiceV1 } from 'service-mappings-node';
 
-import { MappingsHttpClientV1 } from '../../src/version1/MappingsHttpClientV1';
+import { MappingsCommandableHttpClientV1 } from '../../src/version1/MappingsCommandableHttpClientV1';
 import { MappingsClientV1Fixture } from './MappingsClientV1Fixture';
 
-suite('MappingsHttpClientV1', () => {
+suite('MappingsCommandableHttpClientV1', () => {
     let persistence: MappingsMemoryPersistence;
     let controller: MappingsController;
-    let service: MappingsHttpServiceV1;
-    let client: MappingsHttpClientV1;
+    let service: MappingsCommandableHttpServiceV1;
+    let client: MappingsCommandableHttpClientV1;
     let fixture: MappingsClientV1Fixture;
 
     setup(async () => {
@@ -29,10 +29,10 @@ suite('MappingsHttpClientV1', () => {
             'connection.host', 'localhost'
         );
 
-        service = new MappingsHttpServiceV1();
+        service = new MappingsCommandableHttpServiceV1();
         service.configure(httpConfig);
 
-        client = new MappingsHttpClientV1();
+        client = new MappingsCommandableHttpClientV1();
         client.configure(httpConfig);
 
         let references = References.fromTuples(

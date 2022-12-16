@@ -14,12 +14,12 @@ export class MappingsDirectClientV1 extends DirectClient<any> implements IMappin
         let timing = this.instrument(correlationId, 'mappings.get_collections_names');
         
         try {
-            return await this._controller.getCollectionNames(correlationId);
+            let res = await this._controller.getCollectionNames(correlationId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -27,12 +27,12 @@ export class MappingsDirectClientV1 extends DirectClient<any> implements IMappin
         let timing = this.instrument(correlationId, 'mappings.get_mappings');
         
         try {
-            return await this._controller.getMappings(correlationId, filter, paging);
+            let res = await this._controller.getMappings(correlationId, filter, paging);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -40,12 +40,12 @@ export class MappingsDirectClientV1 extends DirectClient<any> implements IMappin
         let timing = this.instrument(correlationId, 'mappings.add_mapping');
         
         try {
-            return await this._controller.addMapping(correlationId, collection, internalId, externalId, timeToLive);
+            let res = await this._controller.addMapping(correlationId, collection, internalId, externalId, timeToLive);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -53,12 +53,12 @@ export class MappingsDirectClientV1 extends DirectClient<any> implements IMappin
         let timing = this.instrument(correlationId, 'mappings.map_to_external');
         
         try {
-            return await this._controller.mapToExternal(correlationId, collection, internalId);
+            let res = await this._controller.mapToExternal(correlationId, collection, internalId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -66,12 +66,12 @@ export class MappingsDirectClientV1 extends DirectClient<any> implements IMappin
         let timing = this.instrument(correlationId, 'mappings.map_to_internal');
 
         try {
-            return await this._controller.mapToInternal(correlationId, collection, externalId);
+            let res = await this._controller.mapToInternal(correlationId, collection, externalId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -79,12 +79,12 @@ export class MappingsDirectClientV1 extends DirectClient<any> implements IMappin
         let timing = this.instrument(correlationId, 'mappings.delete_mapping');
 
         try {
-            return await this._controller.deleteMapping(correlationId, collection, internalId, externalId);
+            let res = await this._controller.deleteMapping(correlationId, collection, internalId, externalId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
