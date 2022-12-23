@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MappingsMemoryClientV1 = void 0;
+exports.MappingsMockClientV1 = void 0;
 const pip_services3_commons_nodex_1 = require("pip-services3-commons-nodex");
-class MappingsMemoryClientV1 {
+class MappingsMockClientV1 {
     constructor(...items) {
         this._maxPageSize = 100;
         this._defaultTTL = 7 * 24 * 60 * 60 * 1000;
@@ -117,5 +117,5 @@ class MappingsMemoryClientV1 {
         });
     }
 }
-exports.MappingsMemoryClientV1 = MappingsMemoryClientV1;
-//# sourceMappingURL=MappingsMemoryClientV1.js.map
+exports.MappingsMockClientV1 = MappingsMockClientV1;
+//# sourceMappingURL=MappingsMockClientV1.js.map

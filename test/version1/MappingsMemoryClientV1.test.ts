@@ -1,13 +1,13 @@
-import { MappingsMemoryClientV1 } from '../../src/version1/MappingsMemoryClientV1';
+import { MappingsMockClientV1 } from '../../src/version1/MappingsMockClientV1';
 import { MappingsClientV1Fixture } from './MappingsClientV1Fixture';
 
 
-suite('MappingsMemoryClientV1', () => {
-    let client: MappingsMemoryClientV1;
+suite('MappingsMockClientV1', () => {
+    let client: MappingsMockClientV1;
     let fixture: MappingsClientV1Fixture;
 
     setup(async () => {
-        client = new MappingsMemoryClientV1();
+        client = new MappingsMockClientV1();
 
         fixture = new MappingsClientV1Fixture(client);
     });

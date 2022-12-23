@@ -2,7 +2,7 @@ import { IMappingsClient } from "./IMappingsClient";
 import { FilterParams, PagingParams, DataPage, IdGenerator } from "pip-services3-commons-nodex";
 import { MappingV1 } from "./MappingV1";
 
-export class MappingsMemoryClientV1 implements IMappingsClient {
+export class MappingsMockClientV1 implements IMappingsClient {
     private _maxPageSize: number = 100;
     private _items: MappingV1[];
     private readonly _defaultTTL: number = 7 * 24 * 60 * 60 * 1000;
